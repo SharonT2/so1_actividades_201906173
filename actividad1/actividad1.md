@@ -12,7 +12,7 @@ Sistema Operativo: Es una organizacion conectada entre si que su función princi
 
 IP: Creo que es un punto de red donde se almacenan los datos o se recaba la información para ser procesada por el usuario.
 
-#### Definición de Persona 2
+### Definición de Persona 2
 
 Sistema Operativo: Una base o una plataforma de iteración.
 
