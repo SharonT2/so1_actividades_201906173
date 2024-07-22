@@ -10,7 +10,7 @@ A continuación se presentan las preguntas realizadas, para concoer más los con
 
 Sistema Operativo: Es una organizacion conectada entre si que su función principal es el ingreso y operacion de datos específicos para contribuir a un fin específico.
 
-IP: Creo que es un punto de red donde se almacenan los datos o se recaba la información para ser procesada por el usuario.
+IP: Punto de red donde se almacenan los datos o se recaba la información para ser procesada por el usuario.
 
 ### Definición de Persona 2
 
