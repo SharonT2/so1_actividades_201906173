@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Actividad2 SISTEMAS OPERATIVOS 1
 
 # Definiendo mi variable con mi usuario de git
