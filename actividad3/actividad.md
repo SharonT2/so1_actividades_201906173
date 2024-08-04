@@ -22,7 +22,7 @@ Visualizando informaciòn de los usuarios:
     id charrys1
     id charrys2
     id charrys3
-    Información mostrada: uid=1002(usuario1) gid=1002(usuario1) grupos=1002(usuario1)
+    Información mostrada: uid=1002(charrys1) gid=1002(charrys1) grupos=1002(charrys1)
 
 Eliminación de usuarios:
     sudo userdel -r charrys3
@@ -44,8 +44,8 @@ Verificando membresía:
     groups charrys2
     
     Resultado esperado:
-    charrys1 : charrys1 grupo1
-    charrys2 : charrys2 grupo2
+    charrys1 : charrys1 priGrupo
+    charrys2 : charrys2 segGrupo
 
 Eliminando grupo:
     sudo groupdel priGrupo
@@ -56,35 +56,42 @@ Eliminando grupo:
 Creación archivos y directorios:
     su - charrys1
     echo "Hola mundo" > ~/file1.txt
-    mkdir ~/file1
-    echo "Hola mundo" > ~/file1/file2.txt
+    mkdir ~/direc1
+    echo "Hola mundo" > ~/direc1/file2.txt
 
 
 Verificar permisos:
     ls -l ~/file1.txt
-    ls -ld ~/file2
+    ls -ld ~/direc1
 
-
+    resultado esperado:
+    -rw-r--r-- 1 charrys1 charrys1 20 Aug  4 12:34 /home/charrys1/file1.txt
+    drwxr-xr-x 2 charrys1 charrys1 4096 Aug  4 12:34 /home/charrys1/direc1
 
 Modificar Permisos usando chmod:
     chmod 640 ~/file1.txt
-    chmod u+x ~/file1/file2.txt
+
+Modificar Permisos usando chmod con Modo Simbólico:
+    chmod u+x ~/direc1/file2.txt
 
 
-Modificar Permisos usando `chmod` con Modo Simbólico:
-
-
-
-Cambiar el Grupo Propietario: Cambia el grupo propietario de `archivo2.txt` a `grupo1`.
-
+Cambiar el Grupo Propietario: Cambia el grupo propietario de archivo2.txt a priGrupo.
+    sudo chgrp priGrupo ~/direc1/file2.txt
 
 
 Configurar Permisos de Directorio:
-
+    sudo chgrp priGrupo ~/direc1/file2.txt
 
 
 Comprobación de Acceso:
+    su - charrys2
+    cat /home/charrys1/file1.txt
+    cat /home/charrys1/direc1/file2.txt
 
 
 
 Verificación Final:
+    ls -l /home/charrys1/file1.txt
+    ls -ld /home/charrys1/direc1
+    ls -l /home/charrys1/direc1/file2.txt
+
