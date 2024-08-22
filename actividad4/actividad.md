@@ -1,5 +1,5 @@
-# Saludo infinitamente
-Este servicio `systemd` ejecuta un script que imprime un saludo y la fecha actual en un bucle infinito.
+# Saludo infinitamente-Actividad4
+Para ejecutar un script que imprime un saludo y la fecha actual en un bucle infinito.
 
 ## Instalación
 
@@ -15,16 +15,16 @@ Este servicio `systemd` ejecuta un script que imprime un saludo y la fecha actua
 
 ### Darle permisos de ejecución:
     ```bash
-    chmod +x /ruta/al/script/nombre_Archivo.sh
+    chmod +x /ruta/nombre_Archivo.sh
     ```
 
-3. Crear la unidad de servicio `saludo.service` en `/etc/systemd/system/`:
+### Crear la unidad de servicio `nombre_Servicio.service` en `/etc/systemd/system/`:
     ```ini
     [Unit]
-    Description=Servicio de saludo infinito
+    Description=Servicio para un saludo infinito
 
     [Service]
-    ExecStart=/ruta/al/script/saludo.sh
+    ExecStart=/ruta/saludo.sh
     Restart=always
     User=nobody
     Group=nogroup
@@ -33,10 +33,10 @@ Este servicio `systemd` ejecuta un script que imprime un saludo y la fecha actua
     WantedBy=multi-user.target
     ```
 
-4. Habilitar y arrancar el servicio:
+### Habilitar y arrancar el servicio:
     ```bash
-    sudo systemctl enable saludo.service
-    sudo systemctl start saludo.service
+    sudo systemctl enable nombre_Servicio.service
+    sudo systemctl start nombre_Servicio.service
     ```
 
 ## Verificar el Servicio
@@ -44,3 +44,9 @@ Este servicio `systemd` ejecuta un script que imprime un saludo y la fecha actua
 Para ver el estado del servicio:
 ```bash
 sudo systemctl status saludo.service
+```bash
+```
+
+## Deteniendo el Servicio
+    sudo systemctl stop nombre_Servicio.service
+    sudo systemctl disable nombre_Servicio.service
